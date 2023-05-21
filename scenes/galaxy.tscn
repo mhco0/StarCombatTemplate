@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://duy2pein35gru"]
+
+[ext_resource type="PackedScene" uid="uid://be0yhufjq4rvw" path="res://scenes/player.tscn" id="1_qqe0o"]
+[ext_resource type="Script" path="res://scripts/spawn_area_controller.gd" id="2_w3tmt"]
+
+[node name="Galaxy" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_qqe0o")]
+position = Vector2(64, 64)
+
+[node name="SpawnArea" type="Node2D" parent="." node_paths=PackedStringArray("spawn_father")]
+position = Vector2(1152, 0)
+script = ExtResource("2_w3tmt")
+spawn_father = NodePath("..")
+area = Rect2(0, 0, 128, 648)
+
+[node name="Timer" type="Timer" parent="SpawnArea"]
+process_callback = 0
+autostart = true
+
+[editable path="Player"]

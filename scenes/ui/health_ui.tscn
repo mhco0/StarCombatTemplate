@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjvpccc4df8fw"]
+
+[ext_resource type="Script" path="res://scripts/ui/health_ui_controller.gd" id="1_mx41w"]
+
+[node name="HealthUI" type="HBoxContainer"]
+offset_right = 74.0
+offset_bottom = 26.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource("1_mx41w")
+
+[node name="Preset" type="Label" parent="."]
+layout_mode = 2
+text = "Health: "
+
+[node name="HealthCount" type="Label" parent="."]
+layout_mode = 2
+text = "0"

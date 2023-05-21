@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://co1g74lp2gins"]
+
+[ext_resource type="PackedScene" uid="uid://duy2pein35gru" path="res://scenes/galaxy.tscn" id="1_bfyej"]
+[ext_resource type="PackedScene" uid="uid://dus388lr4edx7" path="res://scenes/ui/gui.tscn" id="2_tcxjj"]
+
+[node name="Level" type="Node"]
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+
+[node name="Galaxy" parent="GameLayer" instance=ExtResource("1_bfyej")]
+process_mode = 1
+
+[node name="Sprite2D" parent="GameLayer/Galaxy/Player" index="4"]
+modulate = Color(1, 1, 1, 1)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="UILayer" node_paths=PackedStringArray("player_health") instance=ExtResource("2_tcxjj")]
+process_mode = 3
+player_health = NodePath("../../GameLayer/Galaxy/Player/HealthComponent")
+
+[node name="HealthUI" parent="UILayer/GUI" index="0" node_paths=PackedStringArray("health_component")]
+health_component = NodePath("../../../GameLayer/Galaxy/Player/HealthComponent")
+
+[node name="ScoreBoardUI" parent="UILayer/GUI" index="1" node_paths=PackedStringArray("score")]
+score = NodePath("../../../GameLayer/Galaxy/Player/ScoreComponent")
+
+[editable path="GameLayer/Galaxy"]
+[editable path="GameLayer/Galaxy/Player"]
+[editable path="UILayer/GUI"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcmnb0w7aydpp"]
+
+[ext_resource type="Script" path="res://scripts/ui/score_board_ui.gd" id="1_38evs"]
+
+[node name="ScoreBoardUI" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -135.0
+offset_bottom = 26.0
+grow_horizontal = 0
+script = ExtResource("1_38evs")
+
+[node name="Preset" type="Label" parent="."]
+layout_mode = 2
+text = "Enemies Killed: "
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 2
+text = "0"
