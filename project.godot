@@ -23,11 +23,6 @@ SteamSingleton="*res://scripts/singletons/steam_singleton.gd"
 
 window/stretch/mode="viewport"
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [input]
 
 ui_accept={
