@@ -1,0 +1,281 @@
+[gd_scene load_steps=18 format=3 uid="uid://d4fq8qnsbsu5w"]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_ui_controller.gd" id="1_s4vbq"]
+[ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="3_xltsq"]
+[ext_resource type="PackedScene" uid="uid://dm1av7skxvp1j" path="res://game_settings/components/input_btn/input_btn.tscn" id="4_vmy5b"]
+[ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="5_8jj1i"]
+[ext_resource type="PackedScene" uid="uid://cjrahxc5550yu" path="res://scenes/ui/input_conteiner_ui.tscn" id="6_0kkso"]
+[ext_resource type="Script" path="res://game_settings/settings/display_fullscreen.gd" id="6_cvpyr"]
+[ext_resource type="Texture2D" uid="uid://c4vunn2rkqj83" path="res://addons/ggs/assets/game_settings/input_setting.svg" id="6_wjew0"]
+[ext_resource type="PackedScene" uid="uid://b618datl8fsp1" path="res://game_settings/components/_misc_components/apply_btn/apply_btn.tscn" id="7_2ssns"]
+[ext_resource type="Script" path="res://game_settings/settings/input.gd" id="7_i40rc"]
+[ext_resource type="PackedScene" uid="uid://b1btmq8y3gexs" path="res://game_settings/components/_misc_components/input_confirm_window/input_confirm_window.tscn" id="8_agj44"]
+[ext_resource type="PackedScene" path="res://game_settings/components/_misc_components/reset_btn/reset_btn.tscn" id="8_pb83l"]
+
+[sub_resource type="Resource" id="Resource_ta65l"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("6_cvpyr")
+size_setting = "[NONE]"
+current = true
+default = false
+name = "Fullscreen Mode"
+category = "Display"
+icon = ExtResource("5_8jj1i")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_oo4go"]
+resource_name = "Input Binding"
+script = ExtResource("7_i40rc")
+action = "ui_up"
+type = 0
+current = "w"
+default = "up"
+name = "Input Binding"
+category = "Input"
+icon = ExtResource("6_wjew0")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_ao0t2"]
+resource_name = "Input Binding 2"
+script = ExtResource("7_i40rc")
+action = "ui_down"
+type = 0
+current = "s"
+default = "down"
+name = "Input Binding 2"
+category = "Input"
+icon = ExtResource("6_wjew0")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_as62a"]
+resource_name = "Input Binding 3"
+script = ExtResource("7_i40rc")
+action = "ui_left"
+type = 0
+current = "a"
+default = "left"
+name = "Input Binding 3"
+category = "Input"
+icon = ExtResource("6_wjew0")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_1l8gy"]
+resource_name = "Input Binding 4"
+script = ExtResource("7_i40rc")
+action = "ui_right"
+type = 0
+current = "d"
+default = "right"
+name = "Input Binding 4"
+category = "Input"
+icon = ExtResource("6_wjew0")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_c2s8x"]
+resource_name = "Input Binding 5"
+script = ExtResource("7_i40rc")
+action = "shoot"
+type = 0
+current = "space"
+default = "space"
+name = "Input Binding 5"
+category = "Input"
+icon = ExtResource("6_wjew0")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[node name="SettingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4vbq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputConfirmWindow" parent="CenterContainer" instance=ExtResource("8_agj44")]
+initial_position = 2
+visible = false
+dialog_close_on_escape = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Display:"
+
+[node name="InputContainerUI" parent="HBoxContainer/VBoxContainer" instance=ExtResource("6_0kkso")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer/VBoxContainer/InputContainerUI" index="0"]
+text = "Fullscreen"
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Checkbox" parent="HBoxContainer/VBoxContainer/InputContainerUI" groups=["Display"] instance=ExtResource("3_xltsq")]
+layout_mode = 2
+setting = SubResource("Resource_ta65l")
+
+[node name="Btn" parent="HBoxContainer/VBoxContainer/InputContainerUI/Checkbox" index="0"]
+button_pressed = true
+
+[node name="ApplyBtn" parent="HBoxContainer/VBoxContainer" instance=ExtResource("7_2ssns")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Apply display settings
+"
+group = "Display"
+
+[node name="ResetBtn" parent="HBoxContainer/VBoxContainer" instance=ExtResource("8_pb83l")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset display settings"
+group = "Display"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls :"
+
+[node name="InputContainerUI" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_0kkso")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI" index="0"]
+text = "Move Up"
+
+[node name="InputBtn" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI" groups=["Input"] instance=ExtResource("4_vmy5b")]
+layout_mode = 2
+icw = NodePath("../../../../../CenterContainer/InputConfirmWindow")
+setting = SubResource("Resource_oo4go")
+apply_on_change = true
+
+[node name="InputContainerUI2" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_0kkso")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI2" index="0"]
+text = "Move Down"
+
+[node name="InputBtn" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI2" groups=["Input"] instance=ExtResource("4_vmy5b")]
+layout_mode = 2
+icw = NodePath("../../../../../CenterContainer/InputConfirmWindow")
+setting = SubResource("Resource_ao0t2")
+apply_on_change = true
+
+[node name="InputContainerUI3" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_0kkso")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI3" index="0"]
+text = "Move Left"
+
+[node name="InputBtn" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI3" groups=["Input"] instance=ExtResource("4_vmy5b")]
+layout_mode = 2
+icw = NodePath("../../../../../CenterContainer/InputConfirmWindow")
+setting = SubResource("Resource_as62a")
+apply_on_change = true
+
+[node name="InputContainerUI4" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_0kkso")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI4" index="0"]
+text = "Move Right"
+
+[node name="InputBtn" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI4" groups=["Input"] instance=ExtResource("4_vmy5b")]
+layout_mode = 2
+icw = NodePath("../../../../../CenterContainer/InputConfirmWindow")
+setting = SubResource("Resource_1l8gy")
+apply_on_change = true
+
+[node name="InputContainerUI5" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_0kkso")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI5" index="0"]
+text = "Shoot"
+
+[node name="InputBtn" parent="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI5" groups=["Input"] instance=ExtResource("4_vmy5b")]
+layout_mode = 2
+icw = NodePath("../../../../../CenterContainer/InputConfirmWindow")
+setting = SubResource("Resource_c2s8x")
+apply_on_change = true
+
+[node name="ResetBtn" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("8_pb83l")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset control settings
+"
+group = "Input"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Back to Home"
+
+[editable path="HBoxContainer/VBoxContainer/InputContainerUI"]
+[editable path="HBoxContainer/VBoxContainer/InputContainerUI/Checkbox"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI/InputBtn"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI2"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI2/InputBtn"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI3"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI3/InputBtn"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI4"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI4/InputBtn"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI5"]
+[editable path="HBoxContainer/MarginContainer/VBoxContainer/InputContainerUI5/InputBtn"]

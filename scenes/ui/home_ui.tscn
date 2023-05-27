@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cflubcsew7gep"]
 
-[ext_resource type="Script" path="res://scripts/ui/home_ui.gd" id="1_7umpi"]
-[ext_resource type="PackedScene" uid="uid://brr5tumuddad" path="res://scenes/ui/steam_player_ui.tscn" id="2_ij5t4"]
+[ext_resource type="Script" path="res://scripts/ui/home_ui.gd" id="1_1acid"]
+[ext_resource type="PackedScene" uid="uid://brr5tumuddad" path="res://scenes/ui/steam_player_ui.tscn" id="2_cuvdu"]
 
 [node name="HomeUI" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7umpi")
+script = ExtResource("1_1acid")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -32,9 +32,13 @@ text = "Star Ship Template"
 layout_mode = 2
 text = "Start Game"
 
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
 [node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
 
-[node name="SteamPlayerUI" parent="." instance=ExtResource("2_ij5t4")]
+[node name="SteamPlayerUI" parent="." instance=ExtResource("2_cuvdu")]
 layout_mode = 1

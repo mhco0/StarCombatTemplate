@@ -11,17 +11,22 @@ config_version=5
 [application]
 
 config/name="StarCombatTemplate"
-run/main_scene="res://scenes/ui/homeUI.tscn"
+run/main_scene="res://scenes/ui/home_ui.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SteamSingleton="*res://scripts/singletons/steam_singleton.gd"
+GGS="*res://addons/ggs/classes/ggs_globals.gd"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ggs/plugin.cfg")
 
 [input]
 
