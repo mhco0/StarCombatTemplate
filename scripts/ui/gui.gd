@@ -26,7 +26,7 @@ func _ready() -> void:
 	heat_ui.value = player_stabilizer.cur_heat
 
 func _input(event) -> void:
-	if(event.is_action_pressed("ui_cancel")):
+	if(event.is_action_pressed("ui_cancel") and not player_health.is_dead()):
 		pause_label.visible = not pause_label.visible
 		back_button.visible = not back_button.visible
 		get_tree().paused = not get_tree().paused

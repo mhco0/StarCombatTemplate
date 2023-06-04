@@ -16,4 +16,8 @@ func take_damage(amount: int) -> void:
 
 func heal(amount: int) -> void:
 	m_health += amount
+	
 	health_change.emit(m_health)
+	
+func is_dead() -> bool:
+	return m_health <= 0
