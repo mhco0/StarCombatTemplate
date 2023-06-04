@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cnsvkf16ghl1f"]
+
+[node name="heat_ui" type="TextureProgressBar"]
+offset_right = 76.0
+offset_bottom = 175.0
+step = 20.0
+fill_mode = 3

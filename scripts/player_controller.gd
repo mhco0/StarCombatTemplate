@@ -14,6 +14,9 @@ var score_component: Score
 var vulnerability_component: Vulnerability
 
 @export
+var stabilizer_component: StabilizarShootComponent
+
+@export
 var sprite_component: Sprite2D
 
 @export
@@ -30,12 +33,11 @@ var limit_y: float = ProjectSettings.get_setting("display/window/size/viewport_h
 
 func _ready():
 	area_entered.connect(_on_area_entered)
+	stabilizer_component.shoot_stable.connect(spawn_bullet)
+	stabilizer_component.overload.connect(_on_overload)
+	stabilizer_component.overload_finish.connect(_on_stable_heat)
 
 func _physics_process(delta):
-	
-	if(Input.is_action_just_pressed("shoot")):
-		spawn_bullet()
-	
 	velocity = get_input_vector() * speed
 	
 	position += velocity
@@ -51,6 +53,12 @@ func _on_area_entered(area: Area2D) -> void:
 		vulnerability_component.vulnerable = false
 		animation_player.play("invulnerability", -1, vulnerability_component.invulnerability_time)
 		area.queue_free()
+		
+func _on_overload() -> void:
+	animation_player.play("overload", -1)
+
+func _on_stable_heat() -> void:
+	animation_player.play("RESET")
 
 func spawn_bullet() -> void:
 	var bullet: Area2D = bullet_scene.instantiate()

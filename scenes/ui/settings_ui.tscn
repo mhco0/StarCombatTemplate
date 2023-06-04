@@ -16,7 +16,7 @@
 resource_name = "Fullscreen Mode"
 script = ExtResource("6_cvpyr")
 size_setting = "[NONE]"
-current = true
+current = false
 default = false
 name = "Fullscreen Mode"
 category = "Display"

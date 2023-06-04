@@ -8,6 +8,14 @@
 [node name="Player" parent="." instance=ExtResource("1_qqe0o")]
 position = Vector2(64, 64)
 
+[node name="StabilizerShootComponent" parent="Player" index="3"]
+heat_capacity = 500
+heat_applied_by_shoot = 100
+overload_time = 2.0
+
+[node name="Sprite2D" parent="Player" index="5"]
+modulate = Color(1, 1, 1, 1)
+
 [node name="SpawnArea" type="Node2D" parent="." node_paths=PackedStringArray("spawn_father")]
 position = Vector2(1152, 0)
 script = ExtResource("2_w3tmt")
