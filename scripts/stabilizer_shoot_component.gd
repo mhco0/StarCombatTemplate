@@ -36,7 +36,7 @@ func _ready():
 func _physics_process(delta) -> void:
 	cur_heat -= heat_decrease_over_time * delta
 	cur_heat = max(cur_heat, 0)
-	print(cur_heat)
+	#print(cur_heat)
 	
 	if(Input.is_action_just_pressed("shoot")):
 		var can_shoot: bool = apply_heat()

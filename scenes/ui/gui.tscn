@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dus388lr4edx7"]
+[gd_scene load_steps=8 format=3 uid="uid://dus388lr4edx7"]
 
 [ext_resource type="PackedScene" uid="uid://cjvpccc4df8fw" path="res://scenes/ui/health_ui.tscn" id="1_kudns"]
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_pw5d2"]
 [ext_resource type="PackedScene" uid="uid://bcmnb0w7aydpp" path="res://scenes/ui/score_board_ui.tscn" id="2_sel2k"]
+[ext_resource type="PackedScene" uid="uid://cnsvkf16ghl1f" path="res://scenes/ui/heat_ui.tscn" id="4_nknkv"]
 
 [sub_resource type="Animation" id="Animation_yoabi"]
 length = 0.001
@@ -157,3 +158,6 @@ offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Back to Menu"
+
+[node name="HeatUI" parent="." instance=ExtResource("4_nknkv")]
+layout_mode = 1

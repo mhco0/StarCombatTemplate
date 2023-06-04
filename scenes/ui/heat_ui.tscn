@@ -1,7 +1,19 @@
-[gd_scene format=3 uid="uid://cnsvkf16ghl1f"]
+[gd_scene load_steps=2 format=3 uid="uid://cnsvkf16ghl1f"]
 
-[node name="heat_ui" type="TextureProgressBar"]
-offset_right = 76.0
-offset_bottom = 175.0
-step = 20.0
+[ext_resource type="Texture2D" uid="uid://bsnhela3i7nhl" path="res://assets/ui/progress.png" id="1_8bqh1"]
+
+[node name="HeatUI" type="TextureProgressBar"]
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
 fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("1_8bqh1")
+tint_progress = Color(0.972549, 0.0196078, 0, 1)

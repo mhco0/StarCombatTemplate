@@ -10,14 +10,12 @@
 [node name="Galaxy" parent="GameLayer" instance=ExtResource("1_oc1t8")]
 process_mode = 1
 
-[node name="Sprite2D" parent="GameLayer/Galaxy/Player" index="5"]
-modulate = Color(1, 1, 1, 1)
-
 [node name="UILayer" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="UILayer" node_paths=PackedStringArray("player_health") instance=ExtResource("2_ogp8u")]
+[node name="GUI" parent="UILayer" node_paths=PackedStringArray("player_health", "player_stabilizer") instance=ExtResource("2_ogp8u")]
 process_mode = 3
 player_health = NodePath("../../GameLayer/Galaxy/Player/HealthComponent")
+player_stabilizer = NodePath("../../GameLayer/Galaxy/Player/StabilizerShootComponent")
 
 [node name="HealthUI" parent="UILayer/GUI" index="0" node_paths=PackedStringArray("health_component")]
 health_component = NodePath("../../../GameLayer/Galaxy/Player/HealthComponent")
