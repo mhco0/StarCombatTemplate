@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duy2pein35gru" path="res://scenes/galaxy.tscn" id="1_oc1t8"]
 [ext_resource type="PackedScene" uid="uid://dus388lr4edx7" path="res://scenes/ui/gui.tscn" id="2_ogp8u"]
-[ext_resource type="PackedScene" uid="uid://do57jm5iammfq" path="res://scenes/parallax_bg_0.tscn" id="3_u8q5j"]
+[ext_resource type="PackedScene" uid="uid://c5go8ietdktcy" path="res://scenes/parallax_bg_0.tscn" id="3_u8q5j"]
 
 [node name="Level" type="Node"]
 

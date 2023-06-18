@@ -30,12 +30,16 @@ var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn") as PackedSce
 
 var velocity: Vector2 = Vector2(0, 0)
 var limit_y: float = ProjectSettings.get_setting("display/window/size/viewport_height")
+var limit_x: float = ProjectSettings.get_setting("display/window/size/viewport_width")
 
 func _ready():
 	area_entered.connect(_on_area_entered)
 	stabilizer_component.shoot_stable.connect(spawn_bullet)
 	stabilizer_component.overload.connect(_on_overload)
 	stabilizer_component.overload_finish.connect(_on_stable_heat)
+	
+	print(limit_y)
+	print(limit_x)
 
 func _physics_process(delta):
 	velocity = get_input_vector() * speed
@@ -43,6 +47,8 @@ func _physics_process(delta):
 	position += velocity
 	position.y = max(sprite_component.get_rect().size.y / 2, min(position.y, \
 							limit_y - sprite_component.get_rect().size.y / 2))
+	position.x = max(sprite_component.get_rect().size.x / 2, min(position.x, \
+							limit_x - sprite_component.get_rect().size.x / 2))
 
 func _on_enemy_kill() -> void:
 	score_component.increase_score()
@@ -70,4 +76,4 @@ func spawn_bullet() -> void:
 		get_window().add_child(bullet)
 
 func get_input_vector() -> Vector2:
-	return Vector2(0, int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up")))
+	return Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")), int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))).normalized()

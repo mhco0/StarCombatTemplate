@@ -92,8 +92,6 @@ shape = SubResource("RectangleShape2D_fl61w")
 one_way_collision_margin = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(3.8147e-06, 0)
 rotation = 1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("6_73bn0")

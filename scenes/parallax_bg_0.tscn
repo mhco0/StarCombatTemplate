@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://do57jm5iammfq"]
+[gd_scene load_steps=7 format=3 uid="uid://c5go8ietdktcy"]
 
 [ext_resource type="Texture2D" uid="uid://x14awqmp6k5b" path="res://assets/space_background_pack/layers/parallax-space-backgound.png" id="1_errok"]
 [ext_resource type="Script" path="res://scripts/parallax/parallax_bg_0.gd" id="1_l6c6e"]
