@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://co1g74lp2gins"]
+[gd_scene load_steps=4 format=3 uid="uid://co1g74lp2gins"]
 
 [ext_resource type="PackedScene" uid="uid://duy2pein35gru" path="res://scenes/galaxy.tscn" id="1_oc1t8"]
 [ext_resource type="PackedScene" uid="uid://dus388lr4edx7" path="res://scenes/ui/gui.tscn" id="2_ogp8u"]
+[ext_resource type="PackedScene" uid="uid://do57jm5iammfq" path="res://scenes/parallax_bg_0.tscn" id="3_u8q5j"]
 
 [node name="Level" type="Node"]
 
@@ -22,6 +23,8 @@ health_component = NodePath("../../../GameLayer/Galaxy/Player/HealthComponent")
 
 [node name="ScoreBoardUI" parent="UILayer/GUI" index="1" node_paths=PackedStringArray("score")]
 score = NodePath("../../../GameLayer/Galaxy/Player/ScoreComponent")
+
+[node name="ParallaxBg0" parent="." instance=ExtResource("3_u8q5j")]
 
 [editable path="GameLayer/Galaxy"]
 [editable path="GameLayer/Galaxy/Player"]
