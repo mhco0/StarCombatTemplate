@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8c5j5fgouv7m"]
 
 [ext_resource type="Script" path="res://scripts/health_component.gd" id="1_bwpwj"]
-[ext_resource type="Texture2D" uid="uid://b5wa500o4maxc" path="res://icon.svg" id="1_ctk2n"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_tnul7"]
+[ext_resource type="Texture2D" uid="uid://dcrii4sl0g5tk" path="res://assets/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Base/PNGs/Kla'ed - Fighter - Base.png" id="3_1u8vd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74q8m"]
 size = Vector2(64, 64)
@@ -17,8 +17,10 @@ m_health = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.172549, 0, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ctk2n")
+texture_filter = 3
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("3_1u8vd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_74q8m")

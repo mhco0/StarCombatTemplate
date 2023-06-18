@@ -1,10 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfk1opc8rnn6"]
+[gd_scene load_steps=11 format=3 uid="uid://cfk1opc8rnn6"]
 
-[ext_resource type="Texture2D" uid="uid://b5wa500o4maxc" path="res://icon.svg" id="1_4icog"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_uiqd3"]
+[ext_resource type="Texture2D" uid="uid://bni6ermgp01sl" path="res://assets/Foozle_2DS0014_Void_EnemyFleet_3/Nautolan/Weapon Effects - Projectiles/PNGs/Nautolan - Rocket.png" id="3_m5r0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_366lt"]
 size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnus7"]
+atlas = ExtResource("3_m5r0j")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwe7p"]
+atlas = ExtResource("3_m5r0j")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0uuw"]
+atlas = ExtResource("3_m5r0j")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_133qg"]
+atlas = ExtResource("3_m5r0j")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohybk"]
+atlas = ExtResource("3_m5r0j")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maofp"]
+atlas = ExtResource("3_m5r0j")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8h485"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnus7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwe7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0uuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_133qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohybk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maofp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="Bullet" type="Area2D"]
 collision_mask = 4
@@ -13,8 +63,10 @@ script = ExtResource("1_uiqd3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_366lt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
-visibility_layer = 6
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_4icog")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+position = Vector2(0.699997, 0.5)
+rotation = 1.5708
+scale = Vector2(4, 2)
+sprite_frames = SubResource("SpriteFrames_8h485")
+autoplay = "default"

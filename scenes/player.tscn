@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_ydj88"]
 [ext_resource type="Script" path="res://scripts/health_component.gd" id="2_qqf35"]
-[ext_resource type="Texture2D" uid="uid://b5wa500o4maxc" path="res://icon.svg" id="3_ei2vq"]
 [ext_resource type="Script" path="res://scripts/score_component.gd" id="3_uajbr"]
 [ext_resource type="Script" path="res://scripts/vulnerability_component.gd" id="4_g7kg6"]
 [ext_resource type="Script" path="res://scripts/stabilizer_shoot_component.gd" id="5_ohc2v"]
+[ext_resource type="Texture2D" uid="uid://b3a7u6654nupr" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Very damaged.png" id="6_73bn0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl61w"]
 size = Vector2(128, 128)
@@ -92,7 +92,11 @@ shape = SubResource("RectangleShape2D_fl61w")
 one_way_collision_margin = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_ei2vq")
+texture_filter = 3
+position = Vector2(3.8147e-06, 0)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("6_73bn0")
 
 [node name="ShootPosition" type="Node2D" parent="."]
 position = Vector2(64, 0)
