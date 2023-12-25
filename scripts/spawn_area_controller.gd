@@ -19,7 +19,7 @@ func _draw() -> void:
 
 
 func spawn_enemy() -> void:
-	var enemy_scene: PackedScene = load("res://scenes/enemy.tscn") as PackedScene
+	var enemy_scene: PackedScene = load("res://scenes/pathble_enemy.tscn") as PackedScene
 	var enemy = enemy_scene.instantiate()
 	spawn_father.add_child(enemy)
 	var random_x: int = randi_range(global_position.x, global_position.x + area.size.x)

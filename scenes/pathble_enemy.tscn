@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbigw8tvovyky"]
+
+[ext_resource type="PackedScene" uid="uid://c8c5j5fgouv7m" path="res://scenes/enemy.tscn" id="1_5b7jp"]
+[ext_resource type="Curve2D" uid="uid://61p26iv5700" path="res://resources/smooth_teeth.tres" id="1_jqnea"]
+[ext_resource type="Script" path="res://scripts/pathble_enemy.gd" id="2_mcy3b"]
+
+[node name="PathbleEnemy" type="Path2D"]
+curve = ExtResource("1_jqnea")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotation = 2.94673
+
+[node name="Enemy" parent="PathFollow2D" node_paths=PackedStringArray("path_follow") instance=ExtResource("1_5b7jp")]
+script = ExtResource("2_mcy3b")
+path_follow = NodePath("..")
+speed = null
+damage_done = null
+
+[editable path="PathFollow2D/Enemy"]
