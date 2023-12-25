@@ -70,3 +70,14 @@ rotation = 1.5708
 scale = Vector2(4, 2)
 sprite_frames = SubResource("SpriteFrames_8h485")
 autoplay = "default"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 10
+speed_scale = 2.92
+explosiveness = 0.35
+emission_shape = 1
+emission_sphere_radius = 20.0
+particle_flag_align_y = true
+direction = Vector2(-1, 1)
+spread = 10.0
+gravity = Vector2(-450, 0)

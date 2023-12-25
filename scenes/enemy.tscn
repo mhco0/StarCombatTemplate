@@ -16,7 +16,6 @@ script = ExtResource("1_bwpwj")
 m_health = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.172549, 0, 1)
 texture_filter = 3
 rotation = -1.5708
 scale = Vector2(2, 2)

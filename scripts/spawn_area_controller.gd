@@ -7,9 +7,15 @@ extends Node2D
 
 @onready var timer: Timer = $Timer
 
+var enemy_scenes: Array[PackedScene] = [
+	preload("res://scenes/pathble_enemy.tscn"),
+	preload("res://scenes/enemy.tscn"),
+]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	randomize()
 	draw.emit()
 	timer.timeout.connect(spawn_enemy)
 
@@ -19,7 +25,7 @@ func _draw() -> void:
 
 
 func spawn_enemy() -> void:
-	var enemy_scene: PackedScene = load("res://scenes/pathble_enemy.tscn") as PackedScene
+	var enemy_scene: PackedScene = enemy_scenes[randi() % enemy_scenes.size()] as PackedScene
 	var enemy = enemy_scene.instantiate()
 	spawn_father.add_child(enemy)
 	var random_x: int = randi_range(global_position.x, global_position.x + area.size.x)

@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbigw8tvovyky"]
+[gd_scene load_steps=5 format=3 uid="uid://dbigw8tvovyky"]
 
+[ext_resource type="Curve2D" uid="uid://bc1pgdeou76wc" path="res://resources/paths/smooth_turn.tres" id="1_4bjq3"]
 [ext_resource type="PackedScene" uid="uid://c8c5j5fgouv7m" path="res://scenes/enemy.tscn" id="1_5b7jp"]
-[ext_resource type="Curve2D" uid="uid://61p26iv5700" path="res://resources/smooth_teeth.tres" id="1_jqnea"]
 [ext_resource type="Script" path="res://scripts/pathble_enemy.gd" id="2_mcy3b"]
+[ext_resource type="Texture2D" uid="uid://g6jgw0fsah7g" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engines/PNGs/Main Ship - Engines - Big Pulse Engine.png" id="4_hc7jv"]
 
 [node name="PathbleEnemy" type="Path2D"]
-curve = ExtResource("1_jqnea")
+curve = ExtResource("1_4bjq3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = 2.94673
+rotation = 2.50601
 
 [node name="Enemy" parent="PathFollow2D" node_paths=PackedStringArray("path_follow") instance=ExtResource("1_5b7jp")]
 script = ExtResource("2_mcy3b")
 path_follow = NodePath("..")
-speed = null
-damage_done = null
+
+[node name="Sprite2D" parent="PathFollow2D/Enemy" index="1"]
+texture = ExtResource("4_hc7jv")
+flip_v = true
 
 [editable path="PathFollow2D/Enemy"]
