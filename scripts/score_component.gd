@@ -3,8 +3,8 @@ extends Node
 
 signal score_changed(new_score)
 
-@export
-var m_score: int = 0
+@export var m_score: int = 0
+
 
 func increase_score() -> void:
 	m_score += 1

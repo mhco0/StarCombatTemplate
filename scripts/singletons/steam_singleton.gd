@@ -7,18 +7,21 @@ var steam_id: int = 0
 var steam_nick: String = ""
 var steam_lvl: int = 0
 
+
 func _ready() -> void:
 	_initialize_Steam()
+
 
 func _process(_delta: float) -> void:
 	Steam.run_callbacks()
 
+
 func _initialize_Steam() -> void:
 	var init: Dictionary = Steam.steamInit()
-	print("Did Steam initialize?: "+str(init))
+	print("Did Steam initialize?: " + str(init))
 
-	if init['status'] != 1:
-		print("Failed to initialize Steam. " + str(init['verbal']) + " Shutting down...")
+	if init["status"] != 1:
+		print("Failed to initialize Steam. " + str(init["verbal"]) + " Shutting down...")
 		#get_tree().quit()
 
 	is_online = Steam.loggedOn()

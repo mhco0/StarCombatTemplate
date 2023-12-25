@@ -13,9 +13,7 @@ var player_lvl: Label = $HBoxContainer/VBoxContainer/PlayerLvl
 func _ready():
 	if(SteamSingleton.is_online):
 		Steam.avatar_loaded.connect(_on_avatar_loaded)
-		print(SteamSingleton.steam_id)
 		Steam.getPlayerAvatar(Steam.AVATAR_MEDIUM, SteamSingleton.steam_id)
-		print(SteamSingleton.steam_nick)
 		player_name.text = SteamSingleton.steam_nick
 		player_lvl.text = "Level " + str(SteamSingleton.steam_lvl)
 	else:

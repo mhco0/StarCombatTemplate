@@ -1,22 +1,22 @@
 @tool
 extends Node2D
 
-@export
-var spawn_father: Node2D
+@export var spawn_father: Node2D
 
-@export
-var area: Rect2
+@export var area: Rect2
 
-@onready
-var timer: Timer = $Timer
+@onready var timer: Timer = $Timer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	draw.emit()
 	timer.timeout.connect(spawn_enemy)
 
+
 func _draw() -> void:
 	draw_rect(area, Color(0.4, 0.4, 0.4, 0.5))
+
 
 func spawn_enemy() -> void:
 	var enemy_scene: PackedScene = load("res://scenes/enemy.tscn") as PackedScene
